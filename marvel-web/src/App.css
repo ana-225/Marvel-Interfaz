@@ -3,6 +3,25 @@
   margin: 0;
   padding: 0;
 }
+.App{
+   background-image: url(https://firebasestorage.googleapis.com/v0/b/marvel-web-edae6.appspot.com/o/marvel-1080x609.jpg?alt=media&token=0872a7ed-5022-4372-9e72-a4522852c9c4);
+   background-attachment: fixed;
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover;
+  }
+
+h1{
+  color: black;
+  padding-top: 10%;
+}
+.container-cards{
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  } 
+  
 
 html,
 body {
@@ -10,14 +29,53 @@ body {
   height: 100vh;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(./imagenes/marvel-1080x609.jpg);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/marvel-web-edae6.appspot.com/o/fondo.jpg?alt=media&token=e4e778dc-749d-4ec3-aa93-09dd6734d79f);
+  background-attachment: fixed;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  
 }
+
+.logo {
+  display: flex;
+ align-content: center;
+ justify-content: center;
+
+
+}
+.animated {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:initial;
+ }
+ @-webkit-keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ @keyframes flash {
+  0%, 50%, 100% {
+  opacity: 20;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ .flash {
+  -webkit-animation-name:initial;
+  animation-name: flash;
+ }
 
 a {
   text-decoration: none;
 }
 
-.container {
+.card-container {
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
@@ -25,7 +83,7 @@ a {
 
 .btn {
   display: inline-block;
-  color: #fff;
+  color:rgb(73, 73, 73);
   background-color: #3fb573;
   font-size: 1em;
   text-align: center;
@@ -61,76 +119,52 @@ input[type='text'] {
   width: 60%;
   margin: auto;
 }
-
-.contents {
+.card{
+  align-items: center;
+  height: 80%;
+  color: black;
+}
+.container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
-
-.content {
-  cursor: pointer;
-  background-color: transparent;
-  height: 300px;
-  perspective: 1000px;
-}
-
 .content h1 {
   font-size: 25px;
-  border-bottom: 1px #fff solid;
+  border-bottom: 1px rgb(20, 20, 20) solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
-.content img {
+.card-body {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-.content-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.content:hover .content-inner {
-  transform: rotateY(180deg);
-}
-
-.content-front,
-.content-back {
+.card-front {
   position: absolute;
-  width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
   overflow-y: auto;
 }
 
-.content-back {
+.card-back {
   background-color: #333;
   color: white;
   padding: 20px;
   transform: rotateY(180deg);
 }
 
-.content li {
-  list-style: none;
-  padding-bottom: 10px;
-}
-
 @media (max-width: 800px) {
-  .contents {
+  .card-container{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  .contents {
+  .card-container {
     grid-template-columns: 1fr;
   }
 }

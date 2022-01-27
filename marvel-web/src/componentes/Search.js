@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 
 const Search = ({search}) => {
     const[text,setText] = useState('')
-
     const onSearch= (q)=>{
         setText(q)
         search(q)
@@ -14,7 +13,7 @@ const Search = ({search}) => {
             <form>
                 <input type="text"
                 className="form-control"
-                placeholder="Find a character"
+                placeholder="Search a character"
                 autoFocus
                 onChange={(e)=>onSearch(e.target.value)}
                 value={text}/>
@@ -24,3 +23,4 @@ const Search = ({search}) => {
 }
 
 export default Search
+
